@@ -1,0 +1,83 @@
+Question - 3)
+-------------
+
+Justification -1 (PC1)
+----------------------
+Synchronization in java is the capability to control the access of multiple threads to any shared resource. 
+In the Multithreading concept, multiple threads try to access the shared resources at a time to produce 
+inconsistent results. The synchronization is necessary for reliable communication between threads.
+
+There are two synchronized methods created in class Q -> get() and put().
+
+get() method will print Got: and return n.
+put() method will print Put: and return n.
+
+
+Then a class Producer is created which implements Runnable
+(Java runnable is an interface used to execute code on a concurrent thread. It is an interface which is 
+implemented by any class if we want that the instances of that class should be executed by a thread.
+
+The runnable interface has an undefined method run() with void as return type. This method takes in 
+no arguments. When the object of a class implementing Runnable class is used to create a thread, 
+then the run method is invoked in the thread which executes separately.)
+
+in class produces an overloaded method id created Producer (Q q)
+Inside this method, start() method of thread class is implemented as when it is called a new Thread 
+is created and code inside run() method is executed in that new Thread.
+
+run() method is executed directly than no new Thread is created and code inside run() will execute on 
+current Thread and no multi-threading will take place.
+
+inside the run() method while loop is created.
+If the condition in while loop is true, method put() is called and incremented till the condition mentioned 
+in while lopp is true.
+
+Then a class Consumer is created which implements Runnable.
+
+Here a overloaded method of Consummer is created. Inside this method, start() method of thread class is 
+implemented as when it is called a new Thread is created and code inside run() method is executed in that new Thread.
+
+run() method is executed directly than no new Thread is created and code inside run() will execute on 
+current Thread and no multi-threading will take place.
+
+inside the run() method while loop is created.
+If the condition in while loop is true, method get() is called and incremented till the condition mentioned 
+in while lopp is true.
+
+in the main class, object of classes - Produces(p) and Consumer(q) is created and the classes are called for 
+the respective p and q objects.
+
+as the code is executed, an infnite loop of put() and get() methods are printed until CTRL+C is pressed.
+
+Daemon thread in Java is a low-priority thread that runs in the background to perform tasks such as garbage 
+collection. Daemon thread in Java is also a service provider thread that provides services to the user thread. 
+Its life depends on the mercy of user threads i.e. when all the user threads die, JVM terminates this thread 
+automatically.
+
+In simple words, we can say that it provides services to user threads for background supporting tasks. It has 
+no role in life other than to serve user threads.
+----------------------------------------------------------------------------------------------------------------------
+Justification - 2 (PCFixed)
+---------------------------
+This java program shows the concept of interthread communication.
+
+Cooperation (Inter-thread communication) is a mechanism in which a thread is paused running in its 
+critical section and another thread is allowed to enter (or lock) in the same critical section to be executed.
+
+It is implemented by following methods of Object class:
+wait()
+notify()
+
+1) wait() method
+The wait() method causes current thread to release the lock and wait until either another thread invokes the 
+notify() method method for this object, or a specified amount of time has elapsed.
+
+The current thread must own this object's monitor, so it must be called from the synchronized method only 
+otherwise it will throw exception.
+
+2) notify() method
+The notify() method wakes up a single thread that is waiting on this object's monitor. If any threads are waiting 
+on this object, one of them is chosen to be awakened. The choice is arbitrary and occurs at the discretion of the 
+implementation.
+
+
